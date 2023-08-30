@@ -56,6 +56,10 @@
                 
                 <!-- miniature -->
                 <div class="miniature-container" id="miniature-container">
+                    <!-- * bonus  -->
+                    <div class="miniature" v-for="(slide, index) in slides" @click="goTo(index)">
+                        <img :src="slides[index].image" alt="">
+                    </div>
                 </div>
 
                 <!-- autoplay controls -->

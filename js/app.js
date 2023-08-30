@@ -47,6 +47,9 @@ const { createApp } = Vue
           this.activeImg = this.slides.length -1
         }
       },
+      goTo(index){
+        this.activeImg = index
+      }
     }
   }).mount('#app')
 
