@@ -67,8 +67,11 @@ const { createApp } = Vue
           clearInterval(this.autoplay)
           this.autoplay = false
         }
-      }
+      },
       //* ~~~~~~~~~~~~~~~~~~
+      doesWork(){
+        console.log('yes it works');
+      }
     },
     created(){
       this.setAutoplay()
