@@ -14,12 +14,15 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- JS -->
-    <script src="./app.js"></script>
+    <script defer src="./app.js"></script>
     
     <!-- TITLE -->
     <title>Document</title>
 </head>
 <body>
-    <div id="app">{{message}}</div>
+    <div id="app">
+        <h1>  {{ message }} </h1>
+        <img v-bind:src='imgPath' width="" alt="">
+    </div>
 </body>
 </html>
