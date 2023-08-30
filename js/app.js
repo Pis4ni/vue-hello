@@ -29,6 +29,8 @@ const { createApp } = Vue
         ],
         // counter slide attiva
         activeImg: 0,
+        // autoplay
+        autoplay: false
       }
     },
     // metodi dell'app
@@ -49,7 +51,27 @@ const { createApp } = Vue
       },
       goTo(index){
         this.activeImg = index
+      },
+      //* bonus 2 ~~~~~~~~~~
+      setAutoplay(){
+        if (!this.autoplay) {
+          console.log('Autoplay Started');
+          this.autoplay = setInterval( ()=> {
+            this.goNext()
+          },3000)
+        }
+      },
+      stopAutoplay(){
+        if (this.autoplay) {
+          console.log('Autoplay stopped');
+          clearInterval(this.autoplay)
+          this.autoplay = false
+        }
       }
+      //* ~~~~~~~~~~~~~~~~~~
+    },
+    created(){
+      this.setAutoplay()
     }
   }).mount('#app')
 
